@@ -1,18 +1,14 @@
-const Discord = require('discord.js');
-const other = new Discord.Client();
-const config = require('./config.json');
+ const Discord = require('discord.js');
+const client = new Discord.Client();
+console.log("Scrpit By Dream");
 
 
-other.on('ready', () => {
-  console.log(`Logged in as ${other.user.tag}!`);
-});
-
-other.on('ready', async () => {
-      let ReBeL = ["هلا بلزين تراني بوت تبند اشيلك","هي انا بولعها كريديتس لوووووول","Hi Im Credits Agaaaaaaaaain"]
-  setInterval(() => {
-other.channels.get("507275523349676034").send(`${ReBeL[Math.floor(Math.random() *ReBeL.length)]}`);//لا تنسى تحط أيدي الروم
-},4000);
-});
+client.on("ready", () => {
+let channel =     client.channels.get("507275523349676034")
+setInterval(function() {
+channel.send(`LeAdeR Is The Best    LeAdeR Is The Best    LeAdeR Is The Best    LeAdeR Is The Best    LeAdeR Is The Best    `);
+}, 30)
+})
 client.on("message", function(message) {
     var args = message.content.split(/ +/g);
     var command = args.shift()
@@ -20,4 +16,5 @@ client.on("message", function(message) {
     if(command == "say") {
         message.channel.send(args.slice(1, args.length).join(" "))    
     }
-other.login(config.token24);
+});
+client.login(process.env.BOT_TOKEN);
