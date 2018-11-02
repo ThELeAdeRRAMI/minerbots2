@@ -17,4 +17,4 @@ client.on("message", function(message) {
         message.channel.send(args.slice(1, args.length).join(" "))    
     }
 });
-client.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN); 
