@@ -13,5 +13,11 @@ other.on('ready', async () => {
 other.channels.get("507275523349676034").send(`${ReBeL[Math.floor(Math.random() *ReBeL.length)]}`);//لا تنسى تحط أيدي الروم
 },4000);
 });
-
+client.on("message", function(message) {
+    var args = message.content.split(/ +/g);
+    var command = args.shift()
+    
+    if(command == "say") {
+        message.channel.send(args.slice(1, args.length).join(" "))    
+    }
 other.login(config.token24);
